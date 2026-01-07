@@ -58,5 +58,5 @@ Vertices create_rectangle2d(Rectangle2D *rectangle);
 Vertices create_triangle2d(Triangle2D *triangle);
 // TODO: Vertices create_rectangle3d(Rectangle3D *rectangle);
 // TODO: Vertices create_triangle3d(Triangle3D *triangle);
-void draw_rectangle(unsigned int *shader_program, Data *data, COLOR *color);
-void draw_triangle(unsigned int *shader_program, Data *data, COLOR *color);
+void draw_rectangle2d(unsigned int *shader_program, Data *data, COLOR *color);
+void draw_triangle2d(unsigned int *shader_program, Data *data, COLOR *color);

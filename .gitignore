@@ -6,3 +6,4 @@ src/main.c
 .idea
 assets
 src/glad.c
+examples
