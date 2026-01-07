@@ -1,0 +1,8 @@
+include
+lib
+shaders
+CMakeLists.txt
+src/main.c
+.idea
+assets
+glad.c
