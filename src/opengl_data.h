@@ -1,6 +1,8 @@
 #pragma once
 #include <stdlib.h>
 
+#define NONE 0
+
 typedef struct Data {
     float *vertices;
     int *indices;

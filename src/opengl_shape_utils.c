@@ -101,8 +101,11 @@ Vertices create_triangle2d(Triangle2D *triangle) {
 // TODO: Vertices create_rectangle3d(Rectangle3D *rectangle) {};
 
 
-void draw_rectangle2d(unsigned int *shader_program, Data *data, COLOR *color)
+void draw_rectangle2d(unsigned int *shader_program, Data *data, COLOR *color, unsigned int texture)
 {
+    if (texture != NONE ) {
+        glBindTexture(GL_TEXTURE_2D, texture);
+    }
     glUseProgram(*shader_program);
     if (color != nullptr) {
         glUniform4f(data->uniform_location, color->red, color->green, color->blue, color->alpha);
@@ -111,12 +114,17 @@ void draw_rectangle2d(unsigned int *shader_program, Data *data, COLOR *color)
     glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
     glBindVertexArray(0);
 }
-void draw_triangle2d(unsigned int *shader_program, Data *data, COLOR *color)
+
+void draw_triangle2d(unsigned int *shader_program, Data *data, COLOR *color, unsigned int texture)
 {
+    if (texture != NONE ) {
+        glBindTexture(GL_TEXTURE_2D, texture);
+    }
     glUseProgram(*shader_program);
     if (color != nullptr) {
         glUniform4f(data->uniform_location, color->red, color->green, color->blue, color->alpha);
     }
     glBindVertexArray(data->vao);
     glDrawArrays(GL_TRIANGLES, 0, 3);
+
 }
