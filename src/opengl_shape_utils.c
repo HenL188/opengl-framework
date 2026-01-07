@@ -1,6 +1,6 @@
 #include "opengl_shape_utils.h"
 
-float* create_rectangle2d(Rectangle *rectangle) {
+Vertices create_rectangle2d(Rectangle *rectangle) {
     if (rectangle->texture) {
         // 4 vertices * (3 position + 2 texture) = 20 floats
         float *vertices = malloc(sizeof(float) * 20);
@@ -53,7 +53,7 @@ float* create_rectangle2d(Rectangle *rectangle) {
     return vertices;
 }
    
-float* create_triangle2d(Triangle *triangle) {
+Vertices create_triangle2d(Triangle *triangle) {
     if (triangle->texture) {
         float *vertices = malloc(sizeof(float) * 15);
         vertices[0] = triangle->a.x;

@@ -5,4 +5,4 @@ CMakeLists.txt
 src/main.c
 .idea
 assets
-glad.c
+src/glad.c

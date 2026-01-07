@@ -19,3 +19,6 @@ typedef struct COLOR {
     float blue;
     float alpha;
 } COLOR;
+
+typedef int Indices[];
+typedef float* Vertices;
