@@ -178,7 +178,7 @@ unsigned int create_shader_program(const unsigned int *vertex_shader, const unsi
 void clear_background(COLOR *color)
 {
     glClearColor(color->red, color->green, color->blue, color->alpha);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
 void delete_shader_programs(unsigned int shader_program[], int total_programs)

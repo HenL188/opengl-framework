@@ -17,22 +17,46 @@ typedef struct Vector2 {
     float y;
 } Vector2;
 
-typedef struct Triangle {
+typedef struct Vector3 {
+    float x;
+    float y;
+    float z;
+} Vector3;
+
+typedef struct Triangle2D {
     Vector2 a;
     Vector2 b;
     Vector2 c;
     bool texture;
-} Triangle;
+} Triangle2D;
 
-typedef struct Rectangle {
+typedef struct Rectangle2D {
     float x;
     float y;
     float width;
     float height;
     bool texture;
-} Rectangle;
+} Rectangle2D;
 
-float* create_rectangle2d(Rectangle *rectangle);
-float* create_triangle2d(Triangle *triangle);
+typedef struct Triangle3D {
+    Vector3 a;
+    Vector3 b;
+    Vector3 c;
+    bool texture;
+} Triangle3D;
+
+typedef struct Rectangle3D {
+    float x;
+    float y;
+    float z;
+    float width;
+    float height;
+    bool texture;
+} Rectangle3D;
+
+Vertices create_rectangle2d(Rectangle2D *rectangle);
+Vertices create_triangle2d(Triangle2D *triangle);
+// TODO: Vertices create_rectangle3d(Rectangle3D *rectangle);
+// TODO: Vertices create_triangle3d(Triangle3D *triangle);
 void draw_rectangle(unsigned int *shader_program, Data *data, COLOR *color);
 void draw_triangle(unsigned int *shader_program, Data *data, COLOR *color);

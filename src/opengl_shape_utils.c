@@ -1,6 +1,6 @@
 #include "opengl_shape_utils.h"
 
-Vertices create_rectangle2d(Rectangle *rectangle) {
+Vertices create_rectangle2d(Rectangle2D *rectangle) {
     if (rectangle->texture) {
         // 4 vertices * (3 position + 2 texture) = 20 floats
         float *vertices = malloc(sizeof(float) * 20);
@@ -53,7 +53,7 @@ Vertices create_rectangle2d(Rectangle *rectangle) {
     return vertices;
 }
    
-Vertices create_triangle2d(Triangle *triangle) {
+Vertices create_triangle2d(Triangle2D *triangle) {
     if (triangle->texture) {
         float *vertices = malloc(sizeof(float) * 15);
         vertices[0] = triangle->a.x;
@@ -97,6 +97,9 @@ Vertices create_triangle2d(Triangle *triangle) {
 
     return vertices;
 }
+
+// TODO: Vertices create_rectangle3d(Rectangle3D *rectangle) {};
+
 
 void draw_rectangle(unsigned int *shader_program, Data *data, COLOR *color)
 {
